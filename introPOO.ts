@@ -1,25 +1,45 @@
 class Celular {
     // Atributos
+    marca: string;
     encender: boolean;
     apagar: boolean;
-    bajarVolumen: number;
-    subirVolumen: number;
+    volumenActual: number;
     llamar: string;
 
     // constructor
-    constructor(bajarVolumen: number, subirVolumen: number, llamar: string) {
-        this.encender = true;
-        this.bajarVolumen = bajarVolumen;
-        this.subirVolumen = subirVolumen;
-        this.llamar = llamar;
+    constructor(marca: string) {
+        this.marca = marca;
+        this.encender = false;
+        this.volumenActual = 0;
     }
 
     // metodos
-    estadoDelCelula() {
-        if (this.encender) {
-            return this.encender;
-        } else {
-            return false;
-        }
+    encenderCelular() {
+        this.encender = true;
+        console.log("El celular esta encendido");
     }
+
+    apagarCelular() {
+        this.apagar = false;
+        console.log("El celular esta apagado");
+
+    }
+
+    subirVolumen() {
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 }
+
+
