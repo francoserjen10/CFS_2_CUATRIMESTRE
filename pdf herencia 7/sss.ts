@@ -1,0 +1,3 @@
+class PasswordDevil extends Password{
+
+}
