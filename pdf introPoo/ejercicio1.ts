@@ -37,9 +37,28 @@ class Celular {
             return console.log("El volumen actual es", + this.volumenDelCelular);
         }
     }
+
+    hacerLlamada(numero: number): void {
+        let numeroEnCadena = numero.toString()
+        if (numeroEnCadena.length === 10) {
+            return console.log("Llamar a : ", numeroEnCadena);
+        } else {
+            return console.log("El numero: ", numeroEnCadena, "Es invalido");
+        }
+
+
+
+    }
+
+
+
 }
 
 let celu1 = new Celular("Motorola");
 celu1.apagarCelular();
 celu1.encenderCelular();
 celu1.volumenActual(100);
+celu1.volumenActual(0);
+celu1.volumenActual(45);
+celu1.hacerLlamada(22332);
+celu1.hacerLlamada(2284696022);
