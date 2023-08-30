@@ -12,11 +12,10 @@ var ControlDeStock = /** @class */ (function () {
     };
     ControlDeStock.prototype.productoComprado = function (producto) {
         var i = this.productosDisponibles.indexOf(producto);
-        if (i !== 0) {
-            console.log("No existe ese producto");
+        if (i !== -1) {
+            this.productosDisponibles.splice(i, 1);
+            this.productosVendidos.push(producto);
         }
-        this.productosDisponibles.slice(i, 1);
-        this.productosVendidos.push(producto);
     };
     ControlDeStock.prototype.mostrarProductosDisponibles = function () {
         console.log("Productos disponibles: ");
