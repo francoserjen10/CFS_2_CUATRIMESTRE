@@ -30,15 +30,15 @@ class ControlDeStock {
 
 
     }
-
+    // Muestro los productos disponibles y les asigno el nombre y el precio
     public mostrarProductosDisponibles(): void {
         console.log("Productos disponibles: ");
         this.productosDisponibles.forEach(producto => {
             console.log(producto.getNombre(), "A: $", producto.getPrecio());
         })
     }
-
-    public mostrarProductosCompradis(): void {
+    // Muestro productos comprados
+    public mostrarProductosComprados(): void {
         console.log("Productos comprados: ");
         this.productosVendidos.forEach(producto => {
             console.log(producto.getNombre(), "A: $", producto.getPrecio());
@@ -87,5 +87,5 @@ controlDelStockDelKiosco.agregarProductosDisponibles(producto4,);
 controlDelStockDelKiosco.productoComprado(producto1);
 
 controlDelStockDelKiosco.mostrarProductosDisponibles();
-controlDelStockDelKiosco.mostrarProductosCompradis();
+controlDelStockDelKiosco.mostrarProductosComprados();
 
