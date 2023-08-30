@@ -11,16 +11,20 @@ class ControlDeStock {
     }
 
     // Metodos
-
+    // Agrego los productos disponibles 
     public agregarProductosDisponibles(producto: Producto): void {
         this.productosDisponibles.push(producto);
 
     }
-
+    // Metodo para comprar un producto disponible
     public productoComprado(producto: Producto): void {
+        // Busco el indice del producto disponible con indexOf 
         let i = this.productosDisponibles.indexOf(producto);
+        // Me fijo si el indice del producto es distinto a -1, si es distinto es que el producto existe en productos disponibles
         if (i !== -1) {
+            // Elimino el producto de productosDisponibles con splice(el indice del producto, la cantidad a eliminar)
             this.productosDisponibles.splice(i, 1);
+            // Agrego el producto comprado a productosVendidos con push
             this.productosVendidos.push(producto);
         }
 
@@ -58,10 +62,11 @@ class Producto {
     }
 
     // Metodos
+    // Obtengo el nombre
     public getNombre(): string {
         return this.nombre;
     }
-
+    // Obtengo el precio
     public getPrecio(): number {
         return this.precio;
     }
