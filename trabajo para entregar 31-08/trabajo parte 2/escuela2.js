@@ -9,8 +9,7 @@ var Sistema = /** @class */ (function () {
     // Calculo el promedio general de los alumnos
     Sistema.prototype.promedioTotalDeTodosLosAlumnos = function () {
         if (this.alumnos.length === 0) {
-            console.log(this.alumnos);
-            return 5;
+            return 0;
         }
         var sumaPromedioDeAlumnos = 0;
         for (var _i = 0, _a = this.alumnos; _i < _a.length; _i++) {
@@ -19,6 +18,30 @@ var Sistema = /** @class */ (function () {
         }
         var promedioGeneral = sumaPromedioDeAlumnos / this.alumnos.length;
         return promedioGeneral;
+    };
+    Sistema.prototype.darDeBajaAlumnoConIndexOf = function (alumno) {
+        // Encuentro el alumno a eliminar
+        var indexAlumnoAEliminar = this.alumnos.indexOf(alumno);
+        console.log("Alumnos antes de borrar", this.alumnos);
+        // Si encontró al alumno
+        if (indexAlumnoAEliminar >= 0) {
+            // borro un solo alumno, empezando por la ubicación que encontré en el paso anterior
+            this.alumnos.splice(indexAlumnoAEliminar, 1);
+        }
+        console.log("Alumnos después de borrar", this.alumnos);
+    };
+    Sistema.prototype.darDeBajaAlumnoConForeach = function (alumno) {
+        console.log("Alumnos antes de borrar", this.alumnos);
+        var alumnosSinElQueHayQueBorrar = [];
+        // Encuentro al alumno a borrar
+        this.alumnos.forEach(function (a) {
+            // Lo elimino del listado de alumnos
+            if (a !== alumno) {
+                alumnosSinElQueHayQueBorrar.push(a);
+            }
+        });
+        this.alumnos = alumnosSinElQueHayQueBorrar;
+        console.log("Alumnos después de borrar", this.alumnos);
     };
     return Sistema;
 }());
@@ -76,7 +99,6 @@ console.log(examenFran3);
 alumno1.agregarExamenesRendidos(examenFran1, alumno1);
 alumno1.agregarExamenesRendidos(examenFran2, alumno1);
 alumno1.agregarExamenesRendidos(examenFran3, alumno1);
-alumno1.promedioTotalDelAlumno();
 console.log(alumno1.promedioTotalDelAlumno());
 //-------------------Alumno 2------------------------
 var alumno2 = new Alumno("Martin", "Cho");
@@ -90,12 +112,12 @@ console.log(examenTin3);
 alumno2.agregarExamenesRendidos(examenTin1, alumno2);
 alumno2.agregarExamenesRendidos(examenTin2, alumno2);
 alumno2.agregarExamenesRendidos(examenTin3, alumno2);
-alumno2.promedioTotalDelAlumno();
 console.log(alumno2.promedioTotalDelAlumno());
 promedioGeneral.agregarAlumno(alumno1);
 promedioGeneral.agregarAlumno(alumno2);
 promedioGeneral.promedioTotalDeTodosLosAlumnos();
 console.log(promedioGeneral.promedioTotalDeTodosLosAlumnos());
+promedioGeneral.darDeBajaAlumnoConForeach(alumno2);
 // alumnos: Alumno[] = [
 //     {
 //         nombre: 'fran',

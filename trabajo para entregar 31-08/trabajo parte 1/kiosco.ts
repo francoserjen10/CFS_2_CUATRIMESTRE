@@ -1,4 +1,4 @@
-// Clase ControlDeStock
+// -----------------------------------------> class ControlDeStock <--------------------------------------------------//
 class ControlDeStock {
 
     // Atributos
@@ -47,7 +47,7 @@ class ControlDeStock {
 
 }
 
-// Clase Producto
+// -----------------------------------------> class Producto <--------------------------------------------------//
 class Producto {
 
     // Atributos
@@ -72,20 +72,29 @@ class Producto {
     }
 }
 
+// -----------------------------------------> Ejecuto <--------------------------------------------------//
+
+// Creo objeto e instancio clase ControlDeStock
 let controlDelStockDelKiosco = new ControlDeStock();
 
+// Creo objeto e instancio clase Producto
 let producto1 = new Producto("Yerba", 600);
 let producto2 = new Producto("Azucar", 700);
 let producto3 = new Producto("Coca-Cola", 900);
 let producto4 = new Producto("Alfajor", 500);
 
+// Agrego los productos disponibles
 controlDelStockDelKiosco.agregarProductosDisponibles(producto1,);
 controlDelStockDelKiosco.agregarProductosDisponibles(producto2,);
 controlDelStockDelKiosco.agregarProductosDisponibles(producto3,);
 controlDelStockDelKiosco.agregarProductosDisponibles(producto4,);
 
+// Compro un producto
 controlDelStockDelKiosco.productoComprado(producto1);
 
+// Muestro los productos que estan disponibles despues de las ventas
 controlDelStockDelKiosco.mostrarProductosDisponibles();
+
+// Muestro productos comprados
 controlDelStockDelKiosco.mostrarProductosComprados();
 
