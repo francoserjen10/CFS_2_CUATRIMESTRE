@@ -1,0 +1,8 @@
+• 1) ¿Qué pasa cuando se corre el comando “tsc”?
+
+• 2) ¿Cómo está organizada una clase?
+
+• 3) ¿Es correcto que un método auxiliar de una clase
+sea público? ¿Por qué?
+
+• 4) Enumerar las características de una interfaz
