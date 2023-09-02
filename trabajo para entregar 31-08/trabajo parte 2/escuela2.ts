@@ -163,8 +163,8 @@ promedioGeneral.agregarAlumno(alumno1);
 promedioGeneral.agregarAlumno(alumno2);
 
 // Promedio general del salon
-promedioGeneral.promedioTotalDeTodosLosAlumnos();
-console.log(promedioGeneral.promedioTotalDeTodosLosAlumnos());
+const promedioDelSalon = promedioGeneral.promedioTotalDeTodosLosAlumnos();
+console.log(promedioDelSalon);
 
 // Doy de baja alumno
 promedioGeneral.darDeBajaAlumnoConIndexOf(alumno2);
